@@ -6,5 +6,5 @@ var moviesController = require('../controllers/moviesController')
 router.get('/', moviesController.list);
 router.get('/detail/:id', moviesController.mostrar);
 router.get('/new', moviesController.mostrarNuevas);
-
+router.get('/recommended', moviesController.mostrarRecomendadas);
 module.exports = router;

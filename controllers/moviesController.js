@@ -1,4 +1,5 @@
 let db = require ("../database/models");
+const { Op } = require("sequelize");
 let moviesController = {
 
     list: function(req,res){
@@ -23,6 +24,18 @@ let moviesController = {
         })
             .then(function(peliculas_nuevas){
                 res.render("moviesNuevas", {peliculas_nuevas: peliculas_nuevas})
+            })
+    },
+    mostrarRecomendadas: function(req,res){
+        db.Peliculas.findAll({
+            where: {
+                rating: {
+                    [Op.gte] : 8,
+                }
+            }
+        })
+            .then(function(peliculas_recomendadas){
+                res.render("moviesRecommended", {peliculas_recomendadas: peliculas_recomendadas})
             })
     }
 }
