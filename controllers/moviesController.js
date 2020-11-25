@@ -13,6 +13,17 @@ let moviesController = {
             .then(function(pelicula){
                 res.render("movieDetail", {pelicula: pelicula})
             })
+    }, 
+    mostrarNuevas: function(req,res){
+        db.Peliculas.findAll({
+            order: [
+                ['release_date','ASC'],
+            ],
+            limit: 5,
+        })
+            .then(function(peliculas_nuevas){
+                res.render("moviesNuevas", {peliculas_nuevas: peliculas_nuevas})
+            })
     }
 }
 
