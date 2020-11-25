@@ -6,6 +6,13 @@ let moviesController = {
             .then(function(peliculas){
                 res.render("moviesList",{peliculas: peliculas})
             })
+    },
+    mostrar: function(req,res){
+        let pk = req.params.id;
+        db.Peliculas.findByPk(pk)
+            .then(function(pelicula){
+                res.render("movieDetail", {pelicula: pelicula})
+            })
     }
 }
 

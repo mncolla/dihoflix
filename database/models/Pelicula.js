@@ -10,7 +10,23 @@ module.exports = (sequelize, dataTypes) => {
         title: {
             allowNull: false,
             type: dataTypes.STRING
-            }
+            },
+        rating: {
+            allowNull: false,
+            type: dataTypes.STRING
+        },
+        awards: {
+            allowNull: false,
+            type: dataTypes.STRING
+        },
+        length:{
+            allowNull: false,
+            type: dataTypes.STRING
+        },
+        release_date:{
+            allowNull: false,
+            type: dataTypes.STRING
+        }
     }
     let config = {
         tableName: "movies",
