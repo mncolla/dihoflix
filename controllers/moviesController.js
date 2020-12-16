@@ -5,14 +5,14 @@ let moviesController = {
     list: function(req,res){
         db.Peliculas.findAll()
             .then(function(peliculas){
-                res.render("moviesList",{peliculas: peliculas})
+                res.render("moviesList",{peliculas: peliculas, titulo: "Todas las peliculas", css: 'moviesList'})
             })
     },
     mostrar: function(req,res){
         let pk = req.params.id;
         db.Peliculas.findByPk(pk)
             .then(function(pelicula){
-                res.render("movieDetail", {pelicula: pelicula})
+                res.render("movieDetail", {pelicula: pelicula, css: 'movieDetail'})
             })
     }, 
     mostrarNuevas: function(req,res){
@@ -23,7 +23,7 @@ let moviesController = {
             limit: 5,
         })
             .then(function(peliculas_nuevas){
-                res.render("moviesNuevas", {peliculas_nuevas: peliculas_nuevas})
+                res.render("moviesList", {peliculas: peliculas_nuevas, titulo: "Estrenos", css: 'moviesList'})
             })
     },
     mostrarRecomendadas: function(req,res){
@@ -35,7 +35,7 @@ let moviesController = {
             }
         })
             .then(function(peliculas_recomendadas){
-                res.render("moviesRecommended", {peliculas_recomendadas: peliculas_recomendadas})
+                res.render("moviesList", {peliculas: peliculas_recomendadas, titulo: "Aclamadas por el público", css: 'moviesList'})
             })
     }
 }

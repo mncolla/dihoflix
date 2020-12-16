@@ -1,0 +1,33 @@
+.titulos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto auto;
+}
+
+
+.titulos a{
+    width:250px;
+    height: 170px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    background-color: rgba(94, 94, 94,0.5);
+    
+}
+
+.titulos a img{
+    width: 230px;
+    height: 100px;
+    
+    margin: 10px 10px;
+    
+}
+
+.titulos a p{
+    max-height: 60%;
+    text-decoration: none;
+    color: lightgrey;
+    background-color: rgba(94, 94, 94,0);
+    text-align: center;
+    
+}

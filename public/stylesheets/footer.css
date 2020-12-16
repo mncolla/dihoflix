@@ -1,0 +1,37 @@
+footer{
+    background-color: rgba(0,0,0,.7);;
+    padding: 20px;
+    
+
+}
+
+footer .contenedor-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+footer .contenedor-footer .social-icons {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 0 22px 48px 0;
+    width: 255px;
+}
+footer .contenedor-footer .social-icons i{
+    color: white;
+    font-size: 40px;
+}
+
+
+footer .contenedor-footer h2{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    color: crimson;
+}
+
+
