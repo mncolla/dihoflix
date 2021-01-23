@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+    <h1 class="titulo-cambiante"><%- titulo %></h1>
+    
+
+    <div class="titulos">
+      
+      <% for (let i = 0; i < actors.length; i ++){ %>
+          
+
+        <a href="/movies/detail/<%= actors[i].id %>">
+            <p><%= actors[i].first_name + " " + actors[i].last_name %></p>      
+        </a>
+
+      <% } %>
+      
+  </div>
+
+  </body>
+  <%- include('./partials/footer') %>
+</html>
