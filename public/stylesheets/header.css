@@ -1,7 +1,7 @@
 .contenedor-navbar{
     background-color: rgba(0,0,0,.7);
     margin: auto;
-    width: 90%;
+    padding: 0px 30px;
 }
 
 header{
@@ -14,10 +14,19 @@ header .contenedor-navbar{
     align-items: center;
 }
 
+header .contenedor-navbar nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+
+}
+
 header .contenedor-navbar h2{
     font-family: 'Bebas Neue', cursive;
     font-size: 40px;
     color: crimson;
+    width: auto;
 }
 
 header .contenedor-navbar a{
@@ -25,8 +34,42 @@ header .contenedor-navbar a{
     text-decoration: none;
     margin-right: 20px;
     font-family: Arial, Helvetica, sans-serif;
+    width: auto;
 }
 
+header .contenedor-navbar form{ 
+    width: auto;  
+    display: flex;
+    flex-direction: row;
+    
+}
+
+header .contenedor-navbar form button i{ 
+    width: auto;  
+}
+
+header .contenedor-navbar form button{ 
+    border: none;
+    color: gray;
+    width: auto;
+    border-style: none;
+    margin-left: 10px;
+}
+
+header .contenedor-navbar form button:hover{ 
+    border: none;
+    color: antiquewhite;
+    width: auto;
+}
+
+
+
+header .contenedor-navbar form input{ 
+    border: none;
+    background-color: antiquewhite;
+    width: 180px;
+    height: 20px;
+}
 
 header nav a:hover
 {

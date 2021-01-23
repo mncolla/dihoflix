@@ -5,7 +5,13 @@
             <a href="/movies/">Ver todas los titulos</a>
             <a href="/movies/new/">Nuevos estrenos</a>
             <a href="/movies/recommended/">Recomendadas</a>
-            <a href="#">Buscar título</a>
+
+            <form action="/movies/search" method="post">
+                
+                <input type="text" name="search"  placeholder="Buscar un título">
+                <button type="submit"><i class="fas fa-search"></i></button>
+                
+            </form>
         </nav>
     </div>
 </header>
