@@ -15,17 +15,24 @@
           <p>Fecha de estreno: <%= pelicula.release_date %></p>
           <p>Actores: </p>
           
-          <% for (let i = 0; i < pelicula.actores.length; i++) { %>
-
-            <p> <%=pelicula.actores[i].first_name%>  <%pelicula.actores[i].last_name %></p>
-
-          <% } %>
+          <ul>
+            <% for (let i = 0; i < pelicula.actores.length; i++){ %>
+            <li><%= pelicula.actores[i].first_name %> <%= pelicula.actores[i].last_name %></li>
+            <% } %>
+          </ul>
+          
 
       </div>
-      <div class="botones">
-        <a href="/edit/<% pelicula.id %>"><button class="edit" ><i class="far fa-edit"></i></button></a>
-        <button class="delete"><i class="far fa-trash-alt"></i></button>
-      </div>
+
+      <form action="/movies/edit/<%= pelicula.id %>?_method=PUT" method="POST" class="botones">
+        <button type="submit" class="edit"><i class="far fa-edit"></i></button>
+      </form>
+
+      <form action="/movies/delete/<%= pelicula.id %>?_method=DELETE" method="POST" class="botones">
+        <button type="submit" class="delete"><i class="fas fa-trash-alt basura"></i></button>
+      </form>
+
+
     </div>
   </body>
   <%- include('./partials/footer') %>

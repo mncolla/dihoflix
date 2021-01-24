@@ -8,7 +8,7 @@
         
       <h2>Formulario de edición</h2>
 
-      <form action="/movies/edit/<%=pelicula.title%>?_METHOD=PUT" method="POST">
+      <form action="/movies/edit/<%=pelicula.id%>?_method=PUT" method="POST">
         <div>
           <label for="#">Title</label>
           <input type="text" name="titulo" value="<%=pelicula.title%>">

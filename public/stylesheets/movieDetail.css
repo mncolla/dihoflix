@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     
-    height: 650px;
+    height: 850px;
     width: 700px;
     margin: 5% auto;  
     padding: 30px 30px;
@@ -16,13 +16,18 @@
     margin-top: 10px;
 }
 
-.contenedor-movie .datos p{
+.contenedor-movie .datos ul{
+    list-style-type: none;
+    background-color: rgba(94, 94, 94,0);
+}
+
+.contenedor-movie .datos p, li{
     color: white;
     margin: 30px;
     background-color: rgba(94, 94, 94,0);
 }
 
-.contenedor-movie .datos h1{
+.contenedor-movie .datos {
     color: white;
     text-align: center;
     background-color: rgba(94, 94, 94,0);
@@ -42,16 +47,17 @@
     
 }
 
-.contenedor-movie .botones button{
+.contenedor-movie .botones a{
     width: 80px;
     height: 60px;
     margin: 10px;
     border-radius: 10px;
     border-style: none;
-    
+    text-align: center;
+     
 }
 
-.contenedor-movie .botones button i{
+.contenedor-movie .botones a i{
     border-style: none;
     background-color: rgba(255, 255, 255,0);
     width: auto;

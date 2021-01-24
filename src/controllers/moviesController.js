@@ -16,7 +16,7 @@ let moviesController = {
         
         try{
             const pk = req.params.id;
-            const pelicula = await db.Peliculas.findByPk(pk)
+            const pelicula = await db.Peliculas.findByPk(pk, {include: [{association: "genero"}, {association: "actores"}]})
             res.render("movieDetail", {pelicula, css: 'movieDetail'})
         }catch(error){
             console.log(error);
@@ -110,7 +110,8 @@ let moviesController = {
             const pelicula = await db.Peliculas.findByPk(pk)
             const generos = await db.Generos.findAll();
 
-            res.render("movieEdit", {pelicula, generos, css: 'movieEdit'})
+            res.redirect('/movies/edit/'+req.params.id);
+            //res.render("movieEdit", {pelicula, generos, css: 'movieEdit'})
         }catch(error){
             console.log(error);
         }
@@ -129,12 +130,24 @@ let moviesController = {
             },{
                 where: {
                     id: req.params.id
-                }})
-            res.redirect("/movies/"+req.params.id)
+                }});
+            res.redirect("/movies");  
         }catch(error){
             console.log(error)
         }
 
+    },
+    delete: async function(req,res,next){
+        try{
+            await db.Peliculas.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            res.redirect("/movies/")
+        }catch(error){
+            console.log(error);
+        }
     }
 
 }
