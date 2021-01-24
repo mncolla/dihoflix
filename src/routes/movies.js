@@ -8,5 +8,6 @@ router.get('/detail/:id', moviesController.mostrar);
 router.get('/new', moviesController.mostrarNuevas);
 router.get('/recommended', moviesController.mostrarRecomendadas);
 router.post('/search', moviesController.search);
+router.get('/create', moviesController.create);
 
 module.exports = router;

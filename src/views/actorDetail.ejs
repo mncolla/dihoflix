@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+
+    <div class="contenedor-movie">
+        
+      <img src="/images/image_logo.PNG" alt="">
+      <div class="datos">
+          <h1>Actor</h1>        
+          <p>Nombre: <%= actor.first_name + " " + actor.last_name %></p>
+          <p>Rating: <%= actor.rating %></p>
+      </div>
+    </div>
+  </body>
+  <%- include('./partials/footer') %>
+</html>

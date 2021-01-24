@@ -11,36 +11,22 @@ let actorsController = {
             console.log(error);
         }
             
-    }
-    /*mostrar: async (req, res, next) =>{
+    },
+    mostrar: async (req, res, next) =>{
         
         try{
             const pk = req.params.id;
             const actor = await db.Actores.findByPk(pk)
-            res.render("movieDetail", {actor, css: 'movieDetail'})
+            res.render("actorDetail", {actor, css: 'movieDetail'})
         }catch(error){
             console.log(error);
         }
            
         
-    }, 
-    mostrarNuevas: async (req, res, next) =>{
-        try{
-            const peliculas = await db.Actores.findAll({
-            order: [
-                ['release_date','ASC'],
-            ],
-            limit: 5,
-        })
-        res.render("moviesList", {peliculas, titulo: "Estrenos", css: 'moviesList'})    
-        
-        }catch(error){
-            console.log(error);
-        }        
     },
-    mostrarRecomendadas: async (req, res, next) =>{
+    mostrarRecomendados: async (req, res, next) =>{
         try{
-            const peliculas = await db.Peliculas.findAll({
+            const actores = await db.Actores.findAll({
                 where: {
                     rating: {
                         [Op.gte] : 8,
@@ -48,7 +34,7 @@ let actorsController = {
                 }
             })
         
-        res.render("moviesList", {peliculas, titulo: "Aclamadas por el público", css: 'moviesList'})
+        res.render("actorsList", {actores, titulo: "Actores recomendados", css: 'moviesList'})
         
         }catch(error){
             console.log(error);
@@ -58,7 +44,7 @@ let actorsController = {
     
     search: async (req, res, next) => {
         try{
-            const peliculas = await db.Peliculas.findAll({
+            const actores = await db.Actores.findAll({
                 where: {
                     title: {
                         [db.Sequelize.Op.like]: `%${req.body.search}%` 
@@ -69,12 +55,12 @@ let actorsController = {
                 ]
                 
             })  
-            res.render("moviesList", {titulo: "Resultados de la búsqueda: "+req.body.search, css: 'moviesList', peliculas})
+            res.render("actorsList", {titulo: "Resultados de la búsqueda: "+req.body.search, css: 'moviesList', actores})
      
         }catch(error){
             console.log(error);
         }
-    }*/
+    }
 }
 
 module.exports = actorsController;

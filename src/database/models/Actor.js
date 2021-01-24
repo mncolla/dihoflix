@@ -14,6 +14,10 @@ module.exports = (sequelize, dataTypes) => {
         last_name: {
             allowNull: false,
             type: dataTypes.STRING
+        },
+        rating:{
+            allowNull: false,
+            type: dataTypes.STRING
         }
     }
     let config = {
