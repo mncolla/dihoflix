@@ -74,7 +74,69 @@ let moviesController = {
         }catch(error){
             console.log(error);
         }
+    },
+    create: async function(req,res,next){
+
+        // BUSCAR GENEROS
+
+        try{
+            const generos = await db.Generos.findAll();
+            res.render("movieCreate", {css: "create", generos})
+        }
+        catch(error){
+            console.log(error)
+        }
+    },
+    store: async function(req,res,next){
+        
+        try {
+            await db.Peliculas.create({
+                title: req.body.titulo,
+                rating: req.body.rating, 
+                awards: req.body.awards,
+                release_date: req.body.release_date,
+                length: req.body.length,
+                genre_id: req.body.genre
+            })
+            res.redirect("/movies")
+        }catch(error){
+            console.log(error)
+        }
+    },
+    edit: async function(req,res,next){
+
+        try{
+            const pk = req.params.id;
+            const pelicula = await db.Peliculas.findByPk(pk)
+            const generos = await db.Generos.findAll();
+
+            res.render("movieEdit", {pelicula, generos, css: 'movieEdit'})
+        }catch(error){
+            console.log(error);
+        }
+
+    },
+    actualize: async function(req,res,next){
+    
+        try {
+            await db.Peliculas.update({
+                title: req.body.titulo,
+                rating: req.body.rating, 
+                awards: req.body.awards,
+                release_date: req.body.release_date,
+                length: req.body.length,
+                genre_id: req.body.genre
+            },{
+                where: {
+                    id: req.params.id
+                }})
+            res.redirect("/movies/"+req.params.id)
+        }catch(error){
+            console.log(error)
+        }
+
     }
+
 }
 
 module.exports = moviesController;

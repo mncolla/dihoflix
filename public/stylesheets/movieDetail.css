@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     
-    height: 600px;
+    height: 650px;
     width: 700px;
     margin: 5% auto;  
     padding: 30px 30px;
@@ -31,4 +31,37 @@
 .contenedor-movie img{
     width:600px;
     height: 250px;
+}
+
+.contenedor-movie .botones{
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    background-blend-mode: unset;
+    background-color: rgba(255, 255, 255,0);
+    
+}
+
+.contenedor-movie .botones button{
+    width: 80px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: none;
+    
+}
+
+.contenedor-movie .botones button i{
+    border-style: none;
+    background-color: rgba(255, 255, 255,0);
+    width: auto;
+    font-size: large;
+}
+
+.contenedor-movie .botones .edit{
+    background-color: gold;
+}
+
+.contenedor-movie .botones .delete{
+    background-color: crimson;
 }

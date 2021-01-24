@@ -13,6 +13,18 @@
           <p>Premios: <%= pelicula.awards %></p>
           <p>Duracion: <%= pelicula.length %></p>
           <p>Fecha de estreno: <%= pelicula.release_date %></p>
+          <p>Actores: </p>
+          
+          <% for (let i = 0; i < pelicula.actores.length; i++) { %>
+
+            <p> <%=pelicula.actores[i].first_name%>  <%pelicula.actores[i].last_name %></p>
+
+          <% } %>
+
+      </div>
+      <div class="botones">
+        <a href="/edit/<% pelicula.id %>"><button class="edit" ><i class="far fa-edit"></i></button></a>
+        <button class="delete"><i class="far fa-trash-alt"></i></button>
       </div>
     </div>
   </body>

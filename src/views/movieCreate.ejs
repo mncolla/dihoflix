@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+
+    <div class="contenedor-movie">
+        
+      <h2>Formulario de creación</h2>
+
+      <form action="/movies/create" method="POST">
+        <div>
+          <label for="#">Title</label>
+          <input type="text" name="titulo">
+        </div>
+        
+        <div>
+          <label for="#">Rating</label>
+          <input type="number" name="rating">
+        </div>
+        
+        <div>
+          <label for="#">Awards</label>
+          <input type="number" name="awards">
+        </div>
+
+        <div>
+          <label for="#">Fecha de estreno</label>
+          <input type="date" name="release_date">
+        </div>
+        
+        <div>
+          <label for="#">Duración en minutos</label>
+          <input type="number" name="length">
+        </div>
+        
+        <div>
+          <label for="#">Genero</label>
+          <select name="genre" id="">
+            <% for ( let i = 0; i< generos.length; i++) { %>
+              <option value="<%= i+1 %>"><%= generos[i].name %></option>
+            <% } %>
+          </select>
+        </div>
+        <button type="submit">Crear</button>
+      </form>
+      
+
+
+    </div>
+  </body>
+  <%- include('./partials/footer') %>
+</html>

@@ -26,6 +26,11 @@ module.exports = (sequelize, dataTypes) => {
         release_date:{
             allowNull: false,
             type: dataTypes.STRING
+        },
+        genre_id:{
+            allowNull: false,
+            foreignKey: true,
+            type: dataTypes.INTEGER
         }
     }
     let config = {
@@ -35,6 +40,21 @@ module.exports = (sequelize, dataTypes) => {
 
     const Pelicula = sequelize.define(alias,columnas,config);
 
+
+    Pelicula.associate = function(modelos){
+        Pelicula.belongsTo(modelos.Generos,{
+            as: "genero",
+            foreignKey: "genre_id"
+        })
+        
+        Pelicula.belongsToMany(modelos.Actores,{
+            as: "actores",
+            through: "actor_movie",
+            foreignKey: "movie_id",
+            otherKey: "actor_id",
+            timestamps: false
+        })
+    }
 
     return Pelicula;
 
