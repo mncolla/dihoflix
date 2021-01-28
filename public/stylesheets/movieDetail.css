@@ -1,73 +1,103 @@
-.contenedor-movie{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+*{
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
     
-    height: 850px;
-    width: 700px;
-    margin: 5% auto;  
-    padding: 30px 30px;
-    border-radius: 10px;
-    background-color: rgba(94, 94, 94,0.5);
+}
+
+header{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+
+header .contenedor-navbar,nav{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+
+
+.contenedor-movie{
+    padding: 150px 100px;
+    background: url(https://www.themoviedb.org/t/p/original/AmHOQ7rpHwiaUMRjKXztnauSJb7.jpg);
+    background-size: cover;
 }
 
 .contenedor-movie .datos{
-    background-color: rgba(94, 94, 94,0);
+    max-width: 600px;
+    
+}
+
+.contenedor-movie .datos h1{
+    font-size: 50px;
+    
+    text-shadow: slategrey;
+}
+
+.contenedor-movie .datos,.datos_calificaciones,.datos_principales,.actores ,h1,p{
+    background: none;
+}
+.contenedor-movie .datos .datos_calificaciones p{
     margin-top: 10px;
 }
 
-.contenedor-movie .datos ul{
-    list-style-type: none;
-    background-color: rgba(94, 94, 94,0);
+.contenedor-movie .datos .fecha{
+    margin-top: 10px;
+    background: none;
 }
 
-.contenedor-movie .datos p, li{
-    color: white;
-    margin: 30px;
-    background-color: rgba(94, 94, 94,0);
-}
-
-.contenedor-movie .datos {
-    color: white;
+.contenedor-movie .datos .datos_principales .genero{
+    
     text-align: center;
-    background-color: rgba(94, 94, 94,0);
+    background-color: brown;
+    border-style: none;
+    
+    width:200px;
+    padding: 0;
+    margin-top:10px;
 }
 
-.contenedor-movie img{
-    width:600px;
-    height: 250px;
+.contenedor-movie .datos_calificaciones{
+    margin-top: 30px;
+}
+
+.contenedor-movie .actores {
+
+    display: flex;
+    margin: 20px 0;
+
+}
+
+.contenedor-movie .actores .actor{
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    background: brown;
+    cursor: pointer;
+}
+
+/* BOTONES */
+
+.contenedor-movie .botones,button,a,form,i{
+    width: auto;
+    background: none;
+    border-style: none;
 }
 
 .contenedor-movie .botones{
     display: flex;
-    width: 300px;
     justify-content: center;
-    background-blend-mode: unset;
-    background-color: rgba(255, 255, 255,0);
+    font-size: xx-large;
     
 }
 
-.contenedor-movie .botones a{
-    width: 80px;
-    height: 60px;
-    margin: 10px;
-    border-radius: 10px;
-    border-style: none;
-    text-align: center;
-     
+.contenedor-movie .botones .edit i{
+    margin:10px;
+    color:rgb(255, 230, 0);
 }
 
-.contenedor-movie .botones a i{
-    border-style: none;
-    background-color: rgba(255, 255, 255,0);
-    width: auto;
-    font-size: large;
+.contenedor-movie .botones .delete i{
+    margin:10px;
+    color:rgb(179, 0, 0);
 }
 
-.contenedor-movie .botones .edit{
-    background-color: gold;
-}
-
-.contenedor-movie .botones .delete{
-    background-color: crimson;
-}

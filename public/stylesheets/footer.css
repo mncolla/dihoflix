@@ -1,8 +1,6 @@
 footer{
     background-color: rgba(0,0,0,.7);;
     padding: 20px;
-    
-
 }
 
 footer .contenedor-footer{
@@ -15,6 +13,7 @@ footer .contenedor-footer{
 
 
 footer .contenedor-footer .social-icons {
+    background-color: rgba(0,0,0,.7);
     justify-content: space-around;
     align-items: center;
     display: flex;

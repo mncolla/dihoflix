@@ -4,22 +4,14 @@
   <body>
     <%- include('./partials/header') %>
     <h1 class="titulo-cambiante"><%- titulo %></h1>
-    
 
-    <div class="titulos">
-      
-      <% for (let i = 0; i < peliculas.length; i ++){ %>
-          
-
-          <a href="/movies/detail/<%= peliculas[i].id %>">
-            <img src="/images/image_logo.PNG" alt="logo_movie">  
-            <p><%= peliculas[i].title %></p>
-              
-          </a>
-
-      <% } %>
+    <%- include('./partials/carrusel') %>
       
   </div>
+
+  <!----- PARA EL SLIDER ------>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+	<script src="/js/sliderApp.js"></script>
 
   </body>
   <%- include('./partials/footer') %>

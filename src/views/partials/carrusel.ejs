@@ -1,0 +1,23 @@
+<div class="contenedor">
+    <div class="carousel">
+        
+        <div class="carousel__contenedor">
+            <button aria-label="Anterior" class="carousel__anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel__lista">
+                <% for (let i = 0; i < peliculas.length; i++) { %>
+               
+                    <a class="carousel__elemento"href="/movies/detail/<%=peliculas[i].id%>">
+                        <img src="https://www.themoviedb.org/t/p/original/k4oufeiJoVPFu0lbnjIf8SQq51Q.jpg" alt="Foto pelicula <%=peliculas[i].title%>">
+                        <p><%=peliculas[i].title%></p>
+                    </a>
+                
+                <% } %>
+            </div>
+
+            <button aria-label="Siguiente" class="carousel__siguiente"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div role="tablist" class="carousel__indicadores"></div>
+    </div>
+</div>

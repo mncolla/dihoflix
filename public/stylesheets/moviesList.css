@@ -1,37 +1,112 @@
-.titulos{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto auto;
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #1D1D1F;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .titulo-cambiante{
-    color:honeydew;
-    text-align: center;
+	background: #1D1D1F;
+	text-align: center;
 }
 
-.titulos a{
-    width:250px;
-    height: 170px;
-    margin: 20px 10px;
-    border-radius: 10px;
-    background-color: rgba(94, 94, 94,0.5);
-    
+.contenedor {
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
 }
 
-.titulos a img{
-    width: 230px;
-    height: 100px;
-    
-    margin: 10px 10px;
-    
+
+
+/* --- --- CAROUSEL --- --- */
+
+
+
+.carousel__contenedor {
+	position: relative;
+	
 }
 
-.titulos a p{
-    max-height: 60%;
-    text-decoration: none;
-    color: lightgrey;
-    background-color: rgba(94, 94, 94,0);
-    text-align: center;
-    
+.carousel__contenedor p,div{
+	background-color: #1D1D1F;
+}
+
+
+.carousel__contenedor a{
+	text-decoration-line: none;
+	color: whitesmoke;
+}
+
+.carousel__anterior,
+.carousel__siguiente {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: none;
+	top: calc(50% - 35px);
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	opacity: 20%;
+}
+
+.carousel__anterior:hover,
+.carousel__siguiente:hover {
+	opacity: 100%;
+}
+
+.carousel__anterior {
+	left: -30px;
+}
+
+.carousel__siguiente {
+	right: -30px;
+}
+
+.carousel__lista {
+	overflow: hidden;
+}
+
+.carousel__elemento {
+	text-align: center;
+}
+
+.carousel__indicadores .glider-dot {
+	display: block;
+	width: 30px;
+	height: 4px;
+	background: #fff;
+	opacity: .2;
+	border-radius: 0;
+}
+
+.carousel__indicadores .glider-dot:hover {
+	opacity: .5;
+}
+
+.carousel__indicadores .glider-dot.active {
+	opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+	body {
+		padding: 40px 0;
+	}
+
+	.contenido-principal {
+		flex-direction: column;
+	}
+
+	.contenido-principal > * {
+		width: 100%;
+	}
 }

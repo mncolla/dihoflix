@@ -1,5 +1,9 @@
 let db = require ("../database/models");
 const { Op } = require("sequelize");
+const moment = require('moment');
+const { validationResult } = require('express-validator');
+const { movieValidator } = require('../middlewares/movieValidator');
+
 let moviesController = {
 
     list: async (req, res, next) =>{
@@ -17,7 +21,8 @@ let moviesController = {
         try{
             const pk = req.params.id;
             const pelicula = await db.Peliculas.findByPk(pk, {include: [{association: "genero"}, {association: "actores"}]})
-            res.render("movieDetail", {pelicula, css: 'movieDetail'})
+            const fechaFormateada = moment(pelicula.release_date).format('DD/MM/YYYY');
+            res.render("movieDetail", {pelicula,fechaFormateada, css: 'movieDetail'})
         }catch(error){
             console.log(error);
         }
@@ -81,7 +86,7 @@ let moviesController = {
 
         try{
             const generos = await db.Generos.findAll();
-            res.render("movieCreate", {css: "create", generos})
+            res.render("movieCreate", {css: "movieCreate", generos})
         }
         catch(error){
             console.log(error)
@@ -110,8 +115,8 @@ let moviesController = {
             const pelicula = await db.Peliculas.findByPk(pk)
             const generos = await db.Generos.findAll();
 
-            res.redirect('/movies/edit/'+req.params.id);
-            //res.render("movieEdit", {pelicula, generos, css: 'movieEdit'})
+            
+            res.render("movieEdit", {pelicula, generos, css: 'movieEdit'})
         }catch(error){
             console.log(error);
         }

@@ -5,33 +5,59 @@
     <%- include('./partials/header') %>
 
     <div class="contenedor-movie">
+
+      <div class="botones">
+
+        <a href="/movies/edit/<%=pelicula.id%>"><button class="edit"><i class="fas fa-edit"></i></button></a>
         
-      <img src="/images/image_logo.PNG" alt="">
-      <div class="datos">
-          <h1><%= pelicula.title %></h1>        
-          <p>Rating: <%= pelicula.rating %></p>
-          <p>Premios: <%= pelicula.awards %></p>
-          <p>Duracion: <%= pelicula.length %></p>
-          <p>Fecha de estreno: <%= pelicula.release_date %></p>
-          <p>Actores: </p>
-          
-          <ul>
-            <% for (let i = 0; i < pelicula.actores.length; i++){ %>
-            <li><%= pelicula.actores[i].first_name %> <%= pelicula.actores[i].last_name %></li>
-            <% } %>
-          </ul>
-          
+        <form action="/movies/delete/<%=pelicula.id%>?_method=DELETE" method="post">
+          <button type="submit" class="delete"><i class="fas fa-trash"></i></button>
+        </form>
 
       </div>
+           
+      <div class="datos">
+        <div class="datos_principales">
+            <p class="genero"><%= pelicula.genero.name %></p>
+            <h1><%= pelicula.title %></h1>   
+            <% if (pelicula.length != null) {%>
+              <p><%= pelicula.length %> minutos</p> 
+            <% } %>
+        </div>
 
-      <form action="/movies/edit/<%= pelicula.id %>?_method=PUT" method="POST" class="botones">
-        <button type="submit" class="edit"><i class="far fa-edit"></i></button>
-      </form>
+        <div class="fecha">
 
-      <form action="/movies/delete/<%= pelicula.id %>?_method=DELETE" method="POST" class="botones">
-        <button type="submit" class="delete"><i class="fas fa-trash-alt basura"></i></button>
-      </form>
+          <% if (fechaFormateada.length != null) {%>
+            <p>Estrenada el <%- fechaFormateada %></p>
+          <% } %>
 
+        </div>
+
+        <div class="datos_calificaciones">
+
+          <% if (pelicula.rating != null) {%>
+            <p><i class="fas fa-thumbs-up"></i> Rating: <%= pelicula.rating %></p>
+          <% } %>
+          <% if (pelicula.awards != null) {%>
+            <p><i class="fas fa-trophy"></i> Premios: <%= pelicula.awards %></p>
+          <% } %>
+        </div>
+
+        
+        <div class="actores">
+          
+          <% if (pelicula.actores.length > 0) {%>
+            <% for (let i = 0; i < pelicula.actores.length; i++){ %>
+              
+              <img src="https://www.themoviedb.org/t/p/original/pJrcYGmJjwmJ9Zl07Vt0uhjF5S9.jpg" class="actor" title="<%= pelicula.actores[i].first_name %> <%= pelicula.actores[i].last_name %>">
+            <% } %>
+          <% } %>
+        </div>
+
+        
+      </div>
+
+      
 
     </div>
   </body>
