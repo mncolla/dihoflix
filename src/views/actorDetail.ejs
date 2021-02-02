@@ -6,11 +6,18 @@
 
     <div class="contenedor-movie">
         
-      <img src="/images/image_logo.PNG" alt="">
+      
       <div class="datos">
           <h1>Actor</h1>        
           <p>Nombre: <%= actor.first_name + " " + actor.last_name %></p>
           <p>Rating: <%= actor.rating %></p>
+          <p>Peliculas: </p>
+          <% for (let i = 0; i < actor.peliculas.length; i++) { %>
+          
+            <a href="/movies/detail/<%=actor.peliculas[i].id%>"><%= actor.peliculas[i].title %></a>
+            
+              
+          <% } %>
       </div>
     </div>
   </body>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+
+    <p><%= genero.name %></p>
+    
+    <% for (let i = 0; i < peliculas.length; i ++) { %>
+        <% if (peliculas[i].genre_id == genero.id) { %>
+            <a href="/movies/detail/peliculas[i].id"><%= peliculas[i].title %></a>
+            <br>
+        <% } %>
+    <% } %>
+    
+  </body>
+  <%- include('./partials/footer') %>
+</html>

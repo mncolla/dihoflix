@@ -16,8 +16,9 @@ let actorsController = {
         
         try{
             const pk = req.params.id;
-            const actor = await db.Actores.findByPk(pk)
-            res.render("actorDetail", {actor, css: 'movieDetail'})
+            const actor = await db.Actores.findByPk(pk, {include: [{association: "peliculas"}]});
+            const peliculas = await db.Peliculas.findAll();
+            res.render("actorDetail", {actor, peliculas, css: 'actorDetail'})
         }catch(error){
             console.log(error);
         }

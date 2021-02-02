@@ -18,7 +18,16 @@
            
       <div class="datos">
         <div class="datos_principales">
-            <p class="genero"><%= pelicula.genero.name %></p>
+             
+              <% if ( pelicula.genero != null) {%> 
+                <a href="/genres/detail/<%=pelicula.id%>">
+                  <p class="genero"><%= pelicula.genero.name %></p>
+                </a>  
+              <% } else { %>  
+                <p class="genero">Sin género</p>
+              <% } %>
+            
+          
             <h1><%= pelicula.title %></h1>   
             <% if (pelicula.length != null) {%>
               <p><%= pelicula.length %> minutos</p> 
@@ -49,7 +58,10 @@
           <% if (pelicula.actores.length > 0) {%>
             <% for (let i = 0; i < pelicula.actores.length; i++){ %>
               
-              <img src="https://www.themoviedb.org/t/p/original/pJrcYGmJjwmJ9Zl07Vt0uhjF5S9.jpg" class="actor" title="<%= pelicula.actores[i].first_name %> <%= pelicula.actores[i].last_name %>">
+              <a href="/actors/detail/<%=pelicula.actores[i].id%>">
+                <img src="https://www.themoviedb.org/t/p/original/pJrcYGmJjwmJ9Zl07Vt0uhjF5S9.jpg" class="actor" title="<%= pelicula.actores[i].first_name %> <%= pelicula.actores[i].last_name %>">
+              </a>
+
             <% } %>
           <% } %>
         </div>

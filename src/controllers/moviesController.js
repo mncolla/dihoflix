@@ -21,8 +21,9 @@ let moviesController = {
         try{
             const pk = req.params.id;
             const pelicula = await db.Peliculas.findByPk(pk, {include: [{association: "genero"}, {association: "actores"}]})
+            const actors = await db.Actores.findAll();
             const fechaFormateada = moment(pelicula.release_date).format('DD/MM/YYYY');
-            res.render("movieDetail", {pelicula,fechaFormateada, css: 'movieDetail'})
+            res.render("movieDetail", {pelicula,actors, fechaFormateada, css: 'movieDetail'})
         }catch(error){
             console.log(error);
         }
@@ -62,7 +63,11 @@ let moviesController = {
     },
     
     search: async (req, res, next) => {
+
         try{
+        
+            if (req.body.filtro == "movie"){
+
             const peliculas = await db.Peliculas.findAll({
                 where: {
                     title: {
@@ -76,6 +81,22 @@ let moviesController = {
             })  
             res.render("moviesList", {titulo: "Resultados de la búsqueda: "+req.body.search, css: 'moviesList', peliculas})
      
+            }else{
+
+                const actors = await db.Actores.findAll({
+                    where: {
+                        last_name: {
+                            [db.Sequelize.Op.like]: `%${req.body.search}%` 
+                        }
+                    },
+                    order: [
+                    ['first_name', 'ASC']
+                    ]
+                    
+                })  
+                res.render("actorsList", {titulo: "Resultados de la búsqueda: "+req.body.search, css: 'actorsList', actors})
+            }       
+        
         }catch(error){
             console.log(error);
         }

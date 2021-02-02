@@ -1,5 +1,5 @@
 footer{
-    background-color: rgba(0,0,0,.7);;
+    background-color: rgba(0,0,0,1);;
     padding: 20px;
 }
 
@@ -8,12 +8,13 @@ footer .contenedor-footer{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    background: none;
 }
 
 
 
 footer .contenedor-footer .social-icons {
-    background-color: rgba(0,0,0,.7);
+    background: none;
     justify-content: space-around;
     align-items: center;
     display: flex;

@@ -1,26 +1,9 @@
-*{
-    color: whitesmoke;
-    font-family: 'Montserrat', sans-serif;
-    
-}
-
-header{
-    background-color: rgba(255, 255, 255, 0);
-}
-
-
-
-header .contenedor-navbar,nav{
-    background-color: rgba(255, 255, 255, 0);
-}
-
-
-
-
 .contenedor-movie{
     padding: 150px 100px;
     background: url(https://www.themoviedb.org/t/p/original/AmHOQ7rpHwiaUMRjKXztnauSJb7.jpg);
     background-size: cover;
+    color: white;
+    
 }
 
 .contenedor-movie .datos{

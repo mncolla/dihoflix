@@ -7,12 +7,19 @@
             <a href="/movies/recommended/">Recomendadas</a>
             <a href="/movies/create/">Crear película</a>
 
+            
+            
             <form action="/movies/search" method="post">
-                
+            
+                <label for="check-actor" id="label-check"><i class="far fa-user"></i></label>
+                <input type="radio" name="filtro" value="actor" id="check-actor">
+                <label for="check-movie" id="label-check"><i class="fas fa-film"></i></label>
+                <input type="radio" name="filtro" value="movie"  id="check-movie" checked>
                 <input type="text" name="search"  placeholder="Buscar un título">
                 <button type="submit"><i class="fas fa-search"></i></button>
                 
             </form>
+
         </nav>
     </div>
 </header>

@@ -1,17 +1,15 @@
-.contenedor-navbar{
-    background-color: rgba(0,0,0,.7);
-    margin: auto;
-    padding: 0px 30px;
-}
-
 header{
     padding: 30px 0;
+    background: rgba(0,0,0,1);
 }
 
 header .contenedor-navbar{
+    margin: auto;
+    padding: 0px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: none;
 }
 
 header .contenedor-navbar nav{
@@ -46,6 +44,7 @@ header .contenedor-navbar form{
 
 header .contenedor-navbar form button i{ 
     width: auto;  
+    
 }
 
 header .contenedor-navbar form button{ 
@@ -53,8 +52,25 @@ header .contenedor-navbar form button{
     color: gray;
     width: auto;
     border-style: none;
-    margin-left: 10px;
+
 }
+
+header .contenedor-navbar form #check-actor,
+header .contenedor-navbar form #check-movie{ 
+    width: auto;
+  
+}
+
+
+header .contenedor-navbar form label{ 
+    width: auto;
+    margin-left: 10px;
+    cursor: pointer;
+    color:whitesmoke;
+}
+
+
+
 
 header .contenedor-navbar form button:hover{ 
     border: none;
@@ -62,13 +78,12 @@ header .contenedor-navbar form button:hover{
     width: auto;
 }
 
-
-
 header .contenedor-navbar form input{ 
     border: none;
     background-color: antiquewhite;
     width: 180px;
     height: 20px;
+    margin-left: 10px;
 }
 
 header nav a:hover
