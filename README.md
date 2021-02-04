@@ -1,0 +1,3 @@
+Primero que nada quiero agradecer a todo el equipo de profesores de Digital House, realmente fue una experiencia increíble, un gran desafío tanto por el contexto inédito actual como por mi vida personal, dado durante todo este tiempo de cursada mi vida sufrió demasiados cambios que me hicieron un poco mas dificil la etapa de aprendizaje pero aún así ¡lo logré!. 
+Esto es solo el comienzo, lo que me da las herramientas iniciales para poder adentrarme a este mundo tan maravilloso de la programación.
+Por último y no menos importante, quiero agradecer a mi novia Aylu, a mi hija Malena y a mi perrita Pochi los quienes me dieron la fuerza necesaria para poder continuar cuando las cosas se pusieron difíciles.

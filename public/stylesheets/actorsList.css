@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+	background: #1D1D1F;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    
+}
+
+.titulos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.titulos a{
+    width: 320px;
+    height: 60px;
+    margin: 20px 20px;
+    background: cornsilk;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    text-decoration: none;
+}
+
+.titulos a img{
+    width: 40px;
+    height: 40px;
+}
+
+.titulos p{
+    margin-left: 20px;
+    
+}

@@ -24,6 +24,16 @@
           <label for="#">Rating</label>
           <input type="number" name="rating">
         </div>
+
+        <div>
+          <label for="#">Película favorita</label>
+          <select name="favorite_movie" id="">
+            <option value="NULL" selected>Ninguna</option>
+            <% for (let i = 0; i < peliculas.length; i++) { %>
+              <option value="<%=peliculas[i].id%>"><%=peliculas[i].title%></option>
+            <% } %>
+          </select>
+        </div>
         
         
 

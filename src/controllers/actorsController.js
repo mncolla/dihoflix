@@ -6,7 +6,7 @@ let actorsController = {
         
         try{
             const actors = await db.Actores.findAll()
-            res.render("actorsList",{actors, titulo: "Todos los actores", css: 'moviesList'})
+            res.render("actorsList",{actors, titulo: "Todos los actores", css: 'actorsList'})
         }catch(error){
             console.log(error);
         }
@@ -38,7 +38,7 @@ let actorsController = {
                 ]
             })
         
-        res.render("actorsList", {actors, titulo: "Actores recomendados", css: 'moviesList'})
+        res.render("actorsList", {actors, titulo: "Actores recomendados", css: 'actorsList'})
         
         }catch(error){
             console.log(error);
@@ -84,7 +84,7 @@ let actorsController = {
                 first_name: req.body.nombre,
                 last_name: req.body.apellido,
                 rating: req.body.rating, 
-                
+                favorite_movie_id: req.body.favorite_movie  
             })
             res.redirect("/actors")
         }catch(error){
