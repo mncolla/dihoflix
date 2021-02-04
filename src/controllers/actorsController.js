@@ -27,15 +27,18 @@ let actorsController = {
     },
     mostrarRecomendados: async (req, res, next) =>{
         try{
-            const actores = await db.Actores.findAll({
+            const actors = await db.Actores.findAll({
                 where: {
                     rating: {
                         [Op.gte] : 8,
                     }
-                }
+                },
+                order: [
+                ['rating', 'DESC']
+                ]
             })
         
-        res.render("actorsList", {actores, titulo: "Actores recomendados", css: 'moviesList'})
+        res.render("actorsList", {actors, titulo: "Actores recomendados", css: 'moviesList'})
         
         }catch(error){
             console.log(error);
@@ -60,6 +63,32 @@ let actorsController = {
      
         }catch(error){
             console.log(error);
+        }
+    },
+    create: async function(req,res,next){
+
+        // BUSCAR GENEROS
+
+        try{
+            const peliculas = await db.Peliculas.findAll();
+            res.render("actorCreate", {css: "movieCreate", peliculas})
+        }
+        catch(error){
+            console.log(error)
+        }
+    },
+    store: async function(req,res,next){
+        
+        try {
+            await db.Actores.create({
+                first_name: req.body.nombre,
+                last_name: req.body.apellido,
+                rating: req.body.rating, 
+                
+            })
+            res.redirect("/actors")
+        }catch(error){
+            console.log(error)
         }
     }
 }

@@ -2,12 +2,20 @@
     <div class="contenedor-navbar">
         <a href="/movies/"><h2>MALEFLIX</h2></a>
         <nav>
-            <a href="/movies/">Ver todas los titulos</a>
-            <a href="/movies/new/">Nuevos estrenos</a>
-            <a href="/movies/recommended/">Recomendadas</a>
-            <a href="/movies/create/">Crear película</a>
 
-            
+            <div class="contenedor-actormovies">
+                <div class="nav-movies">
+                    <a href="/movies/">Todos los titulos</a>
+                    <a href="/movies/new/">Estrenos</a>
+                    <a href="/movies/recommended/">Recomendadas</a>
+                    <a href="/movies/create/">Crear película</a>
+                </div>
+                <div class="nav-actors">
+                    <a href="/actors/">Todos los actores</a>
+                    <a href="/actors/recommended/">Mejores actores</a>
+                    <a href="/actors/create/">Crear actor</a>
+                </div>
+            </div>            
             
             <form action="/movies/search" method="post">
             

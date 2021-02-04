@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+
+    <div class="contenedor-movie">
+        
+      <h2>Crear un actor</h2>
+
+      <form action="/actors/create" method="POST">
+        <div>
+          <div class="name">
+            <label for="#">Nombre</label>
+            <input type="text" name="nombre">
+          </div>
+          <div class="apellido">
+            <label for="#">Apellido</label>
+            <input type="text" name="apellido">
+          </div>
+        </div>
+        
+        <div>
+          <label for="#">Rating</label>
+          <input type="number" name="rating">
+        </div>
+        
+        
+
+        <button type="submit">Crear</button>
+      </form>
+      
+
+
+    </div>
+  </body>
+  <%- include('./partials/footer') %>
+</html>

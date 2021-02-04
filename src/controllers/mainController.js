@@ -4,8 +4,8 @@ let moviesController = {
     index: async function(req,res){
 
         try{
-            const peliculas = await db.Peliculas.findAll();
-            res.render("index", {css: 'slider', peliculas})
+            res.render("main")
+            
         }catch(error){
             console.log(error);
         }

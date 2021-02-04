@@ -17,7 +17,11 @@ module.exports = (sequelize, dataTypes) => {
         },
         rating:{
             allowNull: false,
-            type: dataTypes.STRING
+            type: dataTypes.INTEGER
+        },
+        favorite_movie_id:{
+           
+            type: dataTypes.INTEGER
         }
     }
     let config = {

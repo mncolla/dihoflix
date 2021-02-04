@@ -90,7 +90,7 @@ let moviesController = {
                         }
                     },
                     order: [
-                    ['first_name', 'ASC']
+                    ['last_name', 'ASC']
                     ]
                     
                 })  
@@ -164,16 +164,35 @@ let moviesController = {
 
     },
     delete: async function(req,res,next){
-        try{
+
+        try {
+            
+            await db.ActorMovie.destroy({
+                where:{
+                    movie_id: req.params.id
+                }
+            })
+            await db.Actores.update({
+                favorite_movie_id: null
+                },
+                {
+                    where:{
+                        favorite_movie_id: req.params.id
+                    }
+                })
             await db.Peliculas.destroy({
                 where: {
                     id: req.params.id
                 }
             })
-            res.redirect("/movies/")
-        }catch(error){
+            
+            res.redirect('/movies/');
+
+        } catch (error) {
             console.log(error);
         }
+
+        
     }
 
 }

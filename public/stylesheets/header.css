@@ -17,7 +17,23 @@ header .contenedor-navbar nav{
     justify-content: flex-end;
     align-items: center;
     flex-grow: 1;
+    
+}
 
+header .contenedor-navbar nav .contenedor-actormovies{
+    background: none;
+}
+
+header .contenedor-navbar nav .contenedor-actormovies .nav-actors{
+    margin-top : 10px;
+    
+}
+
+header .contenedor-navbar nav .contenedor-actormovies .nav-actors,
+header .contenedor-navbar nav .contenedor-actormovies .nav-movies{
+    background: none;
+    display: flex;
+    justify-content: flex-end;
 }
 
 header .contenedor-navbar h2{
@@ -44,7 +60,7 @@ header .contenedor-navbar form{
 
 header .contenedor-navbar form button i{ 
     width: auto;  
-    
+    margin-left: 10px;
 }
 
 header .contenedor-navbar form button{ 
@@ -64,7 +80,7 @@ header .contenedor-navbar form #check-movie{
 
 header .contenedor-navbar form label{ 
     width: auto;
-    margin-left: 10px;
+ 
     cursor: pointer;
     color:whitesmoke;
 }
@@ -83,7 +99,7 @@ header .contenedor-navbar form input{
     background-color: antiquewhite;
     width: 180px;
     height: 20px;
-    margin-left: 10px;
+    
 }
 
 header nav a:hover
