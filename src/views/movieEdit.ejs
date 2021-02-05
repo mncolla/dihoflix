@@ -5,8 +5,21 @@
     <%- include('./partials/header') %>
 
     <div class="contenedor-movie">
-        
+      
       <h2>Formulario de edición</h2>
+
+      <div class="errores">
+        <% if(typeof errors != 'undefined'){ %>
+            <p class="errorTitle">ERROR</p>
+            <ul>
+                <% for(let i=0; i<errors.length; i++){ %>
+                    <li style="font-size: 13px"><%= errors[i].msg %> </li> 
+                <% } %> 
+            </ul> 
+            <% } %> 
+        </div>
+
+      
 
       <form action="/movies/edit/<%=pelicula.id%>?_method=PUT" method="POST">
         <div>
@@ -26,7 +39,7 @@
 
         <div>
           <label for="#">Fecha de estreno</label>
-          <input type="date" name="release_date" value="<%=pelicula.release_date%>">
+          <input type="date" name="release_date" value="<%=fechaForm%>">
         </div>
         
         <div>

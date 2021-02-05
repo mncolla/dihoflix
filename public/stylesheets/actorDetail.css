@@ -1,0 +1,77 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #1D1D1F;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+    
+    align-items: center;
+}
+
+.contenedor{
+    height: 500px;
+}
+
+
+.datos{
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80px;
+    margin-top: 40px;
+}
+
+.datos p{
+    margin-top: 10px;
+}
+
+.datos i{
+    width: auto;
+    margin-right: 10px;
+}
+
+.datos a{
+    margin-top: 20px;
+    text-decoration: none;
+
+}
+.contenedor form{
+    width: auto;
+}
+
+.contenedor .botones{
+    display: flex;
+    margin-left: 70px;
+    margin-top: 40px;
+    justify-content: flex-start;
+
+}
+
+.contenedor .botones button{
+    width: 80px;
+    height: 50px;
+    margin-left: 20px;
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+}
+
+.contenedor .botones button a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.contenedor .botones .delete{
+    background: firebrick;
+}
+
+.contenedor .botones .edit{
+    background: rgb(0, 165, 8);
+}

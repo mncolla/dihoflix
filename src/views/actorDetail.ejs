@@ -4,20 +4,32 @@
   <body>
     <%- include('./partials/header') %>
 
-    <div class="contenedor-movie">
+    <div class="contenedor">
         
       
       <div class="datos">
-          <h1>Actor</h1>        
-          <p>Nombre: <%= actor.first_name + " " + actor.last_name %></p>
-          <p>Rating: <%= actor.rating %></p>
-          <p>Peliculas: </p>
-          <% for (let i = 0; i < actor.peliculas.length; i++) { %>
-          
-            <a href="/movies/detail/<%=actor.peliculas[i].id%>"><%= actor.peliculas[i].title %></a>
-            
-              
+          <h1><%= actor.first_name + " " + actor.last_name %></h1>        
+         
+          <p><i class="fas fa-thumbs-up"></i>Rating: <%= actor.rating %></p>
+
+          <% if (actor.peliculas.length > 0) { %>
+            <p><i class="fas fa-film"></i>Peliculas: </p>
+            <% for (let i = 0; i < actor.peliculas.length; i++) { %>
+              <a href="/movies/detail/<%=actor.peliculas[i].id%>"><%= actor.peliculas[i].title %></a>
+            <% } %>
+          <% } else { %>
+            <p><i class="fas fa-film"></i>Sin participaciones registradas</p>
           <% } %>
+      </div>
+
+      <div class="botones">
+
+        <form action="/actors/delete/<%=actor.id%>?_method=DELETE" method="post">
+          <button  class="delete" type="submit">Eliminar</button>
+        </form>
+
+        <button class="edit"><a href="/actors/edit/<%=actor.id%>">Editar</a></button>
+
       </div>
     </div>
   </body>

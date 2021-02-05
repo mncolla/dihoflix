@@ -20,7 +20,7 @@
         <div class="datos_principales">
              
               <% if ( pelicula.genero != null) {%> 
-                <a href="/genres/detail/<%=pelicula.id%>">
+                <a href="/genres/detail/<%=pelicula.genero.id%>">
                   <p class="genero"><%= pelicula.genero.name %></p>
                 </a>  
               <% } else { %>  

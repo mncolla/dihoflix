@@ -4,15 +4,17 @@
   <body>
     <%- include('./partials/header') %>
 
-    <p><%= genero.name %></p>
-    
-    <% for (let i = 0; i < peliculas.length; i ++) { %>
-        <% if (peliculas[i].genre_id == genero.id) { %>
-            <a href="/movies/detail/peliculas[i].id"><%= peliculas[i].title %></a>
-            <br>
+      <div class="contenedor">
+        <h1><%= genero.name %></h1>
+        
+        <p>Peliculas:</p>
+        <% for (let i = 0; i < peliculas.length; i ++) { %>
+            <% if (peliculas[i].genre_id == genero.id) { %>
+                <a href="/movies/detail/<%=peliculas[i].id%>"><%= peliculas[i].title %></a>
+                <br>
+            <% } %>
         <% } %>
-    <% } %>
-    
+      </div>
   </body>
   <%- include('./partials/footer') %>
 </html>

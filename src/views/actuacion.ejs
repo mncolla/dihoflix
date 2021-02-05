@@ -9,7 +9,9 @@
       <h2>Registrar una actuación</h2>
 
       <form action="/actuacion/" method="post">
-        <div>
+        <div class = "cont-actuacion">
+            
+          <div>
             <label for="#">Actor a asignar</label>
             <select name="actor">
             
@@ -17,7 +19,9 @@
                 <option value="<%=actores[i].id%>"><%=actores[i].first_name%> <%=actores[i].last_name %></option>
             <% } %>
             </select>
+          </div>
 
+          <div>
             <label for="#">Pelicula a asignar</label>
             <select name="movie">
             
@@ -25,7 +29,7 @@
                 <option value="<%=peliculas[i].id%>"><%=peliculas[i].title%></option>
             <% } %>
             </select>
-
+          </div>
             <button type="submit">Confirmar</button>
         </div>
     </form>    

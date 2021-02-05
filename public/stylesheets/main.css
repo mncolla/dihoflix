@@ -4,6 +4,36 @@
   padding: 0%;
   box-sizing: border-box;
   background-color: rgba(0,0,0,.7);
+  
+	font-family: 'Montserrat', sans-serif;
+}
+
+.contenedor{
+  height: 500px;
+  background: none;
+  
+}
+
+h1{
+  text-align: center;
+  color: whitesmoke ;
+  background: none;
+}
+
+.boton-main{
+  width: 300px;
+  height: 70px;
+  border: none;
+  border-radius: 10px;
+  background: firebrick;
+  margin: 200px 600px;
+  
+}
+
+button a {
+  font-size: x-large;
+  text-decoration: none;
+  color: whitesmoke
 }
 
 

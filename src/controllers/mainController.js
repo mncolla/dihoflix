@@ -4,7 +4,7 @@ let moviesController = {
     index: async function(req,res){
 
         try{
-            res.render("main")
+            res.render("main", {css: 'main'})
             
         }catch(error){
             console.log(error);

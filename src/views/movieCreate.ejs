@@ -8,6 +8,17 @@
         
       <h2>Agregar una pelicula</h2>
 
+      <div class="errores">
+        <% if(typeof errors != 'undefined'){ %>
+            <p class="errorTitle">ERROR</p>
+            <ul>
+                <% for(let i=0; i<errors.length; i++){ %>
+                    <li style="font-size: 13px"><%= errors[i].msg %> </li> 
+                <% } %> 
+            </ul> 
+            <% } %> 
+        </div>
+
       <form action="/movies/create" method="POST">
         <div>
           <label for="#">Title</label>

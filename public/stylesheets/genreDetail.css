@@ -1,86 +1,34 @@
-.contenedor-movie{
-    padding: 150px 100px;
-    background: url(https://www.themoviedb.org/t/p/original/AmHOQ7rpHwiaUMRjKXztnauSJb7.jpg);
-    background-size: cover;
-    color: white;
-    
+* {
+	box-sizing: border-box;
 }
 
-.contenedor-movie .datos{
-    max-width: 600px;
-    
+body {
+	background: #1D1D1F;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.contenedor-movie .datos h1{
-    font-size: 50px;
-    
-    text-shadow: slategrey;
+.contenedor h1{
+    margin: 50px 0;
+    font-size: large;
 }
 
-.contenedor-movie .datos,.datos_calificaciones,.datos_principales,.actores ,h1,p{
-    background: none;
-}
-.contenedor-movie .datos .datos_calificaciones p{
-    margin-top: 10px;
+p{
+	background: #1D1D1F;
+	text-align: center;
 }
 
-.contenedor-movie .datos .fecha{
-    margin-top: 10px;
-    background: none;
+.contenedor {
+	max-width: 800px;
+	
 }
 
-.contenedor-movie .datos .datos_principales .genero{
-    
-    text-align: center;
-    background-color: brown;
-    border-style: none;
-    
-    width:200px;
-    padding: 0;
-    margin-top:10px;
-}
-
-.contenedor-movie .datos_calificaciones{
-    margin-top: 30px;
-}
-
-.contenedor-movie .actores {
-
-    display: flex;
-    margin: 20px 0;
-
-}
-
-.contenedor-movie .actores .actor{
-    width: 40px;
-    height: 40px;
-    margin-right: 5px;
-    background: brown;
-    cursor: pointer;
-}
-
-/* BOTONES */
-
-.contenedor-movie .botones,button,a,form,i{
-    width: auto;
-    background: none;
-    border-style: none;
-}
-
-.contenedor-movie .botones{
-    display: flex;
-    justify-content: center;
-    font-size: xx-large;
-    
-}
-
-.contenedor-movie .botones .edit i{
-    margin:10px;
-    color:rgb(255, 230, 0);
-}
-
-.contenedor-movie .botones .delete i{
-    margin:10px;
-    color:rgb(179, 0, 0);
+.contenedor a{
+    text-decoration: none;
+    margin-top: 20px;
 }
 

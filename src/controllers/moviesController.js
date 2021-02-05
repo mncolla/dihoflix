@@ -114,19 +114,27 @@ let moviesController = {
         }
     },
     store: async function(req,res,next){
-        
-        try {
-            await db.Peliculas.create({
-                title: req.body.titulo,
-                rating: req.body.rating, 
-                awards: req.body.awards,
-                release_date: req.body.release_date,
-                length: req.body.length,
-                genre_id: req.body.genre
-            })
-            res.redirect("/movies")
-        }catch(error){
-            console.log(error)
+
+        let errors = validationResult(req);
+		if(errors.isEmpty()){
+            try {
+                await db.Peliculas.create({
+                    title: req.body.titulo,
+                    rating: req.body.rating, 
+                    awards: req.body.awards,
+                    release_date: req.body.release_date,
+                    length: req.body.length,
+                    genre_id: req.body.genre
+                })
+                res.redirect("/movies")
+            }catch(error){
+                console.log(error)
+            }
+        }else{
+
+            const generos = await db.Generos.findAll();
+
+            return res.render('movieCreate',{errors: errors.errors, generos, css: 'movieCreate' })
         }
     },
     edit: async function(req,res,next){
@@ -135,9 +143,10 @@ let moviesController = {
             const pk = req.params.id;
             const pelicula = await db.Peliculas.findByPk(pk)
             const generos = await db.Generos.findAll();
-
+            const fechaFormateada = moment(pelicula.release_date).format('DD-MM-YYYY');            
+            let fechaForm =  moment(pelicula.release_date).format('YYYY') + "-" + moment(pelicula.release_date).format('MM') + "-" + moment(pelicula.release_date).format('DD');
             
-            res.render("movieEdit", {pelicula, generos, css: 'movieEdit'})
+            res.render("movieEdit", {pelicula, fecha: fechaFormateada, fechaForm, generos, css: 'movieEdit'})
         }catch(error){
             console.log(error);
         }
@@ -145,23 +154,31 @@ let moviesController = {
     },
     actualize: async function(req,res,next){
     
-        try {
-            await db.Peliculas.update({
-                title: req.body.titulo,
-                rating: req.body.rating, 
-                awards: req.body.awards,
-                release_date: req.body.release_date,
-                length: req.body.length,
-                genre_id: req.body.genre
-            },{
-                where: {
-                    id: req.params.id
-                }});
-            res.redirect("/movies");  
-        }catch(error){
-            console.log(error)
-        }
+        let errors = validationResult(req);
+            if(errors.isEmpty()){
+                try {
+                    await db.Peliculas.update({
+                        title: req.body.titulo,
+                        rating: req.body.rating, 
+                        awards: req.body.awards,
+                        release_date: req.body.release_date,
+                        length: req.body.length,
+                        genre_id: req.body.genre
+                    },{
+                        where: {
+                            id: req.params.id
+                        }});
+                    res.redirect("/movies");  
+                }catch(error){
+                    console.log(error)
+            }
+        }else{
+            const pk = req.params.id;
+            const pelicula = await db.Peliculas.findByPk(pk)
+            const generos = await db.Generos.findAll();
 
+            return res.render('movieEdit',{errors: errors.errors, pelicula,generos, css: 'movieCreate' })
+        }
     },
     delete: async function(req,res,next){
 

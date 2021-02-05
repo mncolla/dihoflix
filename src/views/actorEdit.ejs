@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+
+    <div class="contenedor-movie">
+        
+      <h2>Modificar un actor</h2>
+
+      <div class="errores">
+        <% if(typeof errors != 'undefined'){ %>
+            <p class="errorTitle">ERROR</p>
+            <ul>
+                <% for(let i=0; i<errors.length; i++){ %>
+                    <li style="font-size: 13px"><%= errors[i].msg %> </li> 
+                <% } %> 
+            </ul> 
+            <% } %> 
+        </div>
+
+      <form action="/actors/edit/<%=actor.id%>?_method=PUT" method="POST">
+        <div>
+          <div class="name">
+            <label for="#">Nombre</label>
+            <input type="text" name="nombre" value="<%=actor.first_name%>">
+          </div>
+          <div class="apellido">
+            <label for="#">Apellido</label>
+            <input type="text" name="apellido" value="<%=actor.last_name%>">
+          </div>
+        </div>
+        
+        <div>
+          <label for="#">Rating</label>
+          <input type="number" name="rating" value="<%=actor.rating%>">
+        </div>
+
+        <div>
+          <label for="#">Película favorita</label>
+          
+          <select name="favorite_movie" id="">
+            <% for ( let i = 0; i < peliculas.length; i++) { %>
+              
+              <% if (peliculas[i].id == actor.favorite_movie_id) { %>
+                <option value="<%= i+1 %>" selected><%= peliculas[i].title %></option>
+              <% } else { %>
+                <option value="<%= i+1 %>"><%= peliculas[i].title %></option>
+              <% } %>    
+            <% } %>
+          </select>
+
+
+        </div>
+        
+        
+
+        <button type="submit">Guardar</button>
+      </form>
+      
+
+
+    </div>
+  </body>
+  <%- include('./partials/footer') %>
+</html>

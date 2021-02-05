@@ -9,6 +9,9 @@ body {
     min-height: 100vh;
     
 }
+.titulo-cambiante{
+    text-align: center;
+}
 
 .titulos{
     display: flex;
